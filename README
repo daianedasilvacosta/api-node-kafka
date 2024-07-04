@@ -1,0 +1,29 @@
+links de auto ajuda/referencias
+https://www.youtube.com/watch?v=EiDLKECLcZw
+https://github.com/kriscfoster/node-kafka-producer-consumer
+https://www.npmjs.com/package/node-rdkafka
+https://www.npmjs.com/package/avsc
+#comandos de execução
+docker-compose up -d
+docker-compose up
+
+#acesenta no package.josn
+"type": "module"
+
+#separe os terminais
+deixe o docker-compose ativado e vai para outro terminal
+npm init = executa os pacotes depois aperta "enter" ate voltar para o terminal
+npm install avsc
+npm install node-rdkafka
+npm run start:producer - para executar
+
+#producer
+um terminal para diretório producer
+npm run start:producer
+
+#consumer
+um para diretório consumer
+npm run start:consumer - para executar
+
+#COMANDO PARA REPARTIÇÃO
+docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test

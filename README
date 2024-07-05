@@ -27,3 +27,17 @@ npm run start:consumer - para executar
 
 #COMANDO PARA REPARTIÇÃO
 docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic test
+
+#Crie os diretórios de dados
+mkdir -p ./data/influxdb ./data/grafana
+
+#Certifique-se de que os diretórios têm permissões corretas
+sudo chown -R 472:472 ./data/influxdb
+sudo chown -R 472:472 ./data/grafana
+
+#inicie o projeto
+docker-compose up -d
+
+#verifique os logs
+docker-compose logs -f
+
